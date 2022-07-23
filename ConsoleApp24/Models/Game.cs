@@ -12,7 +12,7 @@ namespace ConsoleApp24.Models
         public IMap _map;
         private Menu menu;
         public Player player { get; private set; }
-        public LeaderTabel leaderTabel { get; set; } 
+        public LeaderTabel leaderTabel { get; set; }
 
         public Game()
         {
@@ -23,7 +23,7 @@ namespace ConsoleApp24.Models
         }
 
         public Game(Player player_)
-        {                 
+        {
             player = player_;
         }
 
@@ -65,7 +65,7 @@ namespace ConsoleApp24.Models
             Console.SetCursorPosition(55, 2);
             Console.Write(player.Score);
             while (true)
-            {                        
+            {
                 if (_map.IsHit(snake) || snake.IsHitByItSelf())
                 {
                     if (leaderTabel.players.Any(i => i.Name == player.Name))
@@ -78,11 +78,11 @@ namespace ConsoleApp24.Models
                     else
                     {
                         player.Record = player.Score;
-                        leaderTabel.players.Add(player);                        
+                        leaderTabel.players.Add(player);
                     }
 
                     dataStorage.SaveRecords(leaderTabel.players);
-                    Console.SetCursorPosition(51,21);
+                    Console.SetCursorPosition(51, 21);
                     Console.Write("Game Over");
                     Console.ReadKey();
                     Console.Clear();
@@ -101,22 +101,22 @@ namespace ConsoleApp24.Models
                 if (Console.KeyAvailable)
                 {
                     snake.HandleKey(Console.ReadKey().Key);
-                }          
+                }
             }
         }
 
         private void InitGame()
         {
             Console.Clear();
-            Console.SetWindowSize(111,43);
+            Console.SetWindowSize(111, 43);
             Console.CursorVisible = false;
             InitSnake();
-            InitMap(); 
+            InitMap();
         }
 
         private void InitMap()
         {
-            MapGenerator mapGenerator = new MapGenerator();           
+            MapGenerator mapGenerator = new MapGenerator();
             _map = mapGenerator.Generate(Enum.MapType.Box);
             _map.Draw();
             _map.GenerateFood();

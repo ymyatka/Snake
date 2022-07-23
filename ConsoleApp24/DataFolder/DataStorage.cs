@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp24.Models
 {
@@ -17,9 +14,9 @@ namespace ConsoleApp24.Models
             pathToStorage = pathToStorage_;
             leaderBoardFileName = leaderBoardFileName_;
 
-            if (!Directory.Exists(pathToStorage_) )
+            if (!Directory.Exists(pathToStorage_))
             {
-                Directory.CreateDirectory(pathToStorage_);         
+                Directory.CreateDirectory(pathToStorage_);
             }
             if (!File.Exists(Path.Combine(pathToStorage_, leaderBoardFileName)))
             {
@@ -37,7 +34,7 @@ namespace ConsoleApp24.Models
         {
             using (StreamReader sr = new StreamReader(Path.Combine(pathToStorage, leaderBoardFileName)))
             {
-                    players.AddRange(JsonConvert.DeserializeObject<List<Player>>(sr.ReadToEnd()));
+                players.AddRange(JsonConvert.DeserializeObject<List<Player>>(sr.ReadToEnd()));
             }
         }
     }

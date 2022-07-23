@@ -3,7 +3,7 @@ using System;
 
 namespace ConsoleApp24.Infrastucture
 {
-    public interface IPoint: IDrawble, ICloneable
+    public interface IPoint : IDrawble, ICloneable
     {
         int X { get; set; }
         int Y { get; set; }
@@ -11,11 +11,11 @@ namespace ConsoleApp24.Infrastucture
         ConsoleColor Color { get; set; }
 
         char Symbol { get; set; }
-        
+
         void Move(MoveDirection direction, int count);
 
         void Delete();
 
-        bool IsHit(IPoint point);      
+        bool IsHit(IPoint point);
     }
 }

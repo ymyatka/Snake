@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp24.Models
 {
-    public class Snake:GameObject
+    public class Snake : GameObject
     {
         public IPoint _head;
         public IPoint _tail;
@@ -16,7 +16,7 @@ namespace ConsoleApp24.Models
         private MoveDirection _direction;
 
         public Snake(IPoint tail, int length, MoveDirection direction)
-        { 
+        {
             _tail = tail;
             _direction = direction;
 

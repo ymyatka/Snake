@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp24.Models
 {
@@ -12,7 +10,7 @@ namespace ConsoleApp24.Models
         int height = 22;
         int width = 60;
         public List<Player> players = new List<Player>();
-         
+
         public void PrintAllMenu()
         {
             Console.Clear();
@@ -45,10 +43,10 @@ namespace ConsoleApp24.Models
 
             foreach (var player in players_)
             {
-                PrintPointOfMenu(numOfButton, player.Name + "                " + player.Record);                
+                PrintPointOfMenu(numOfButton, player.Name + "                " + player.Record);
                 numOfButton++;
             }
-            
+
             Console.ReadKey();
             Console.Clear();
         }

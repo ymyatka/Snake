@@ -1,13 +1,9 @@
 ﻿using ConsoleApp24.Enum;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp24.Models
 {
-    public class Line: GameObject
+    public class Line : GameObject
     {
         public Line(int x, int y, int length, LineType type, ConsoleColor color, char symbol)
         {
@@ -30,7 +26,7 @@ namespace ConsoleApp24.Models
                         points.Add(new Point(x++, y, symbol, color));
                     }
                     break;
-                
+
             }
         }
     }

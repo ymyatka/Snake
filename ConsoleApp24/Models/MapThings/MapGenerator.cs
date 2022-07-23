@@ -30,7 +30,7 @@ namespace ConsoleApp24.Models
             Line UpWall = new Line(X, Y, Width, LineType.Horizontal, ConsoleColor.Red, '#');
             Line DownWall = new Line(X, Y + Height, Width, LineType.Horizontal, ConsoleColor.Red, '#');
 
-            List<IGameObject> walls = new List<IGameObject>() { LeftWall, RightWall, UpWall, DownWall }; 
+            List<IGameObject> walls = new List<IGameObject>() { LeftWall, RightWall, UpWall, DownWall };
 
             return new Map(X, Y, Height, Width, "Box", walls);
         }

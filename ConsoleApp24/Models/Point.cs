@@ -69,6 +69,6 @@ namespace ConsoleApp24.Models
         public bool IsHit(IPoint point)
         {
             return point.X == X && point.Y == Y;
-        }       
+        }
     }
 }
